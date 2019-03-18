@@ -42,5 +42,22 @@
 
     // Hitpoints after the fight.
     echo $pikachu->name . "'s new HP: " . $pikachu->hitPoints . "<br/>";
-    echo $charmeleon->name . "'s new HP: " . $charmeleon->hitPoints;
+    echo $charmeleon->name . "'s new HP: " . $charmeleon->hitPoints . "<br/><br/><br/><hr/>";
+
+    // Pokebag
+    $pokebag = new Pokebag();
+
+    $pokebag->addPokemon($pikachu);
+    $pokebag->addPokemon($charmeleon);
+
+    //add single pokemon
+    //$pokebag->addPokemon($charmender)
+
+    //remove single pokemon
+    //$pokebag->removePokemon($charmeleon);
+
+    //remove all pokemon
+    //$pokebag->removeAllPokemon();
+
+    echo $pokebag->showList();
 ?>
