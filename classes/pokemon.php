@@ -19,6 +19,7 @@
             $this->name = $name; // Name of the pokemon.
             $this->type = new Pokemon_Type($type); // Pokemon type.
             $this->hitPoints = $hitPoints; // Amount of hitpoints for pokemon.
+            $this->health = $hitPoints; // Amount of health for pokemon.
             $this->attacks = $attacks; // List of all pokemon attacks.
             $this->weakness = $weakness; // Contains pokemon weakness.
             $this->resistance = $resistance; // Contains pokemon resistance.
@@ -85,10 +86,6 @@
             if($this->hitPoints < 0)
             {
                 $this->hitPoints = 0;
-            }
-            else
-            {
-                $this->hitPoints;
             }
 
             return $damage . $output;

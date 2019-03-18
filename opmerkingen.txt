@@ -1,0 +1,10 @@
+Pokébattle:
+
+Gereviewed door: Ludo de Vries & Kelvin Wijkniet
+Klas: LPIAO17A2
+
++ "Het ziet er gewoon netjes uit" ~ Kelvin
++ "Prima" ~ Ludo
+
+- "Nutteloze else gebruikt" ~ Kelvin
+- "Comments klopte niet helemaal" ~ Ludo
