@@ -26,7 +26,9 @@
         new Pokemon_Resistance('Lightning', 20)
     );
 
-    echo $pikachu->name . " heeft zich aangeloten bij het gevecht! En heeft " . $pikachu->hitPoints . " HP <br/>";
-    echo $charmeleon->name . " heeft zich aangeloten bij het gevecht! En heeft " . $charmeleon->hitPoints . " HP";
-    
+    echo $pikachu->name . " heeft zich aangesloten bij het gevecht! En heeft " . $pikachu->hitPoints . " HP <br/>";
+    echo $charmeleon->name . " heeft zich aangesloten bij het gevecht! En heeft " . $charmeleon->hitPoints . " HP <br/><br/>";
+
+    echo $pikachu->attackPokemon($charmeleon, 'Electric Ring') . "<br/>";
+    echo $charmeleon->attackPokemon($pikachu, 'Flare');
 ?>
