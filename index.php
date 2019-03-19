@@ -28,8 +28,8 @@
             new Pokemon_Attack('Head Butt', 'Fighting', 10), // attack name, attack type and amount of damage.
             new Pokemon_Attack('Flare', 'Fire', 30) // attack name, attack type and amount of damage.
         ],
-        new Pokemon_Weakness('Water', 1.5), // weakness name and multiplier value.
-        new Pokemon_Resistance('Lightning', 20) // resistance name and subtract value.
+        new Pokemon_Weakness('Water', 2), // weakness name and multiplier value.
+        new Pokemon_Resistance('Lightning', 10) // resistance name and subtract value.
     );
 
     // Stats before the fight.
