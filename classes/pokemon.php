@@ -1,28 +1,28 @@
 <?php
 
-    class Pokemon
+    abstract class Pokemon
     {
         // Store all variables for class 'Pokemon'.
-        private $name;
-        private $type;
-        private $hitPoints;
-        private $health;
-        private $attacks;
-        private $weakness;
-        private $resistance;
+        protected $id;
+        protected $name;
+        protected $type;
+        protected $hitPoints;
+        protected $health;
+        protected $attacks;
+        protected $weakness;
+        protected $resistance;
+
+        public function generateId()
+        {
+            return uniqid();
+        }
 
         /**
-         * This function is called whenever a new 'pokemon' class has been created.
+         * This function will return data
         */
-        public function __construct($name, $type, $hitPoints, $attacks, $weakness, $resistance)
+        public function __get($variable)
         {
-            $this->name = $name; // Name of the pokemon.
-            $this->type = new Pokemon_Type($type); // Pokemon type.
-            $this->hitPoints = $hitPoints; // Amount of hitpoints for pokemon.
-            $this->health = $hitPoints; // Amount of health for pokemon.
-            $this->attacks = $attacks; // List of all pokemon attacks.
-            $this->weakness = $weakness; // Contains pokemon weakness.
-            $this->resistance = $resistance; // Contains pokemon resistance.
+            return $this->$variable;
         }
 
         /**
@@ -53,20 +53,18 @@
         public function damagePokemon($targetedPokemon, $attack)
         {
             $output;
-            $damage;
+            $damage = $attack->damage;
 
             // if the type of attack is the weakness of the targeted pokemon.
             if($this->weakness->type == $attack->type)
             {
                 $output = ' schade (Het was super effectief!)';
-                $damage = $attack->damage;
                 $damage *= $this->weakness->multiplier;
             }
             // if the type of attack is the resistance of the targeted pokemon.
             else if($this->resistance->type == $attack->type)
             {
                 $output = ' schade (Het was niet effectief!)';
-                $damage = $attack->damage;
                 $damage -= $this->resistance->value;
 
                 if($damage < 0)
@@ -90,14 +88,6 @@
 
             return $damage . $output;
 
-        }
-
-        /**
-         * This function will return data
-        */
-        public function __get($variable)
-        {
-            return $this->$variable;
         }
     }
 

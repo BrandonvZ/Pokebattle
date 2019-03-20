@@ -5,32 +5,12 @@
     /**
      * This will create a new pokemon.
     */
-    $pikachu = new Pokemon(
-        'Pikachu', // Name of the pokemon.
-        'Lightning', // Type of the pokemon.
-        60, // Amount of hitpoints.
-        [
-            new Pokemon_Attack('Electric Ring', 'Lightning', 50), // attack name, attack type and amount of damage.
-            new Pokemon_Attack('Pika Punch', 'Fighting', 20) // attack name, attack type and amount of damage.
-        ],
-        new Pokemon_Weakness('Fire', 1.5), // weakness name and multiplier value.
-        new Pokemon_Resistance('Fighting', 20) // resistance name and abstract value.
-    );
+    $pikachu = new Pokemon_Pikachu();
 
     /**
      * This will create a new pokemon.
     */
-    $charmeleon = new Pokemon(
-        'Charmeleon', // Name of the pokemon.
-        'Fire', // Type of the pokemon.
-        60, // Amount of hitpoints.
-        [
-            new Pokemon_Attack('Head Butt', 'Fighting', 10), // attack name, attack type and amount of damage.
-            new Pokemon_Attack('Flare', 'Fire', 30) // attack name, attack type and amount of damage.
-        ],
-        new Pokemon_Weakness('Water', 2), // weakness name and multiplier value.
-        new Pokemon_Resistance('Lightning', 10) // resistance name and subtract value.
-    );
+    $charmeleon = new Pokemon_Charmeleon();
 
     // Stats before the fight.
     echo $pikachu->name . " heeft zich aangesloten bij het gevecht! En heeft " . $pikachu->hitPoints . " HP <br/>";
@@ -51,7 +31,7 @@
     $pokebag->addPokemon($charmeleon);
 
     //add single pokemon
-    //$pokebag->addPokemon($charmender)
+    //$pokebag->addPokemon($pikachu);
 
     //remove single pokemon
     //$pokebag->removePokemon($charmeleon);

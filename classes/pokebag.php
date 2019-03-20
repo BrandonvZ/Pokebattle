@@ -2,15 +2,16 @@
 
     class Pokebag
     {
-        // Store variable for class 'Pokebag'.
+        // Store variables for class 'Pokebag'.
         private $pokemonList = array();
+        private $maxPokemon = 10;
 
         /**
          * This function will create a single pokemon (max 10).
         */
         public function addPokemon($pokemon)
         {
-            if(count($this->pokemonList) < 10)
+            if(count($this->pokemonList) < $this->maxPokemon)
             {
                 $this->pokemonList[] = $pokemon;
             }
